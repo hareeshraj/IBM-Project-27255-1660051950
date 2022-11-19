@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Cognos Analytics Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+
+        body,
+        html {
+            font-family: 'JetBrains Mono', monospace;
+            height: 100vh;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        #content {
+            height: 100%;
+        }
+
+        #dashboard {
+            height: 100%;
+        }
+
+        #report {}
+
+        .iframe {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <div class="nav-link" id="navBarItem" onclick="renderHome()" name="home">Home</div>
+                </li>
+                <li class="nav-item active">
+                    <div class="nav-link" id="navBarItem" onclick="renderDash()" name="dashboard">Dashboard</div>
+                </li>
+                <li class="nav-item active">
+                    <div class="nav-link" id="navBarItem" onclick="renderRep()" name="reports">Reports</div>
+                </li>
+                <li class="nav-item active">
+                    <div class="nav-link" id="navBarItem" onclick="renderStatus()" name="reports">Story</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content"></div>
+</body>
+
+</html>
+
+<script>
+    const content = document.getElementById('content');
+    renderHome();
+    function renderHome() {
+        content.innerHTML = `<div id="dashboard">
+        <div class="title">
+            <h1>IBM Nalayathiran Project</h1><br />
+            <h1>Analytics for Hospitals' Health-Care Data</h1>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Team Id</th>
+                <th scope="col">PNT2022TMID04531</th> 
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Name</th>
+                <td>Haris S</td>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td>Gokula Kannan G</td>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td>Hari Vignesh K G</td>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td>Abishek A</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>`
+    }
+
+    function renderDash() {
+        content.innerHTML = `<div id="dashboard">
+        <div class="title">
+            <h1>IBM Cognos Dashboard</h1>
+        </div>
+        <div class="iframe">
+            <iframe
+                src="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2FHealthcare%2BDashboard&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard"
+                width="100%" height="100%" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="">
+            </iframe>
+        </div>
+    </div>`
+    }
+    function renderRep() {
+        content.innerHTML = `<div id="dashboard">
+        <div class="title">
+            <h1>IBM Cognos Report</h1>
+        </div>
+        <div class="iframe">
+            <iframe src="https://us3.ca.analytics.ibm.com/bi/?pathRef=.my_folders%2FReport&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=run&amp;prompt=false" width="100%" height="100%" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+        </div>
+    </div>`
+    }
+    function renderStatus() {
+        content.innerHTML = `<div id="dashboard">
+        <div class="title">
+            <h1>IBM Cognos Story</h1>
+        </div>
+        <div class="iframe">
+            <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=story&amp;pathRef=.my_folders%2Fstory&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;sceneId=model00000184910944c8_00000000&amp;sceneTime=0" width="100%" height="100%" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+    </div>`
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
